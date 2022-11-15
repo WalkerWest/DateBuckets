@@ -24,7 +24,7 @@ class Dates {
 			buckets = getTimeBuckets(beg,end);
 		} catch (Exception ex) { System.out.println(ex.getMessage()); }
 		if (buckets!=null) {
-			System.out.println("Buckets were indeed found!");
+			System.out.println("Buckets were indeed found.");
 		}
 		//Duration myDur = Duration.between(beg,end);
 		//System.out.println("The difference is "+myDur.toNanos());
