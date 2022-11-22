@@ -25,7 +25,7 @@ public class datesTest {
 		Dates myDates = new Dates();
 		try {
 			myDates.getTimeBuckets(
-					"2022-11-14 06:00:00.000","2022-11-14 06:00:00.000");
+				"2022-11-14 06:00:00.000","2022-11-14 06:00:00.000");
 		}
 		catch (StopException e) { e.printStackTrace(); }
 		catch (Over24HrsException e) { e.printStackTrace(); }
@@ -37,8 +37,8 @@ public class datesTest {
 		Dates myDates = new Dates();
 		try {
 			myDates.getTimeBuckets(
-					"2022-11-14 06:00:00.000000000 America/Chicago",
-					"2022-11-14 06:00:00.000");
+				"2022-11-14 06:00:00.000000000 America/Chicago",
+				"2022-11-14 06:00:00.000");
 		}
 		catch (StartException e) { e.printStackTrace(); }
 		catch (Over24HrsException e) { e.printStackTrace(); }
@@ -50,8 +50,8 @@ public class datesTest {
 		Dates myDates = new Dates();
 		try {
 			myDates.getTimeBuckets(
-					"2022-11-14 06:00:00.000000000 Etc/GMT+6",
-					"2022-11-15 06:00:00.000000001 Etc/GMT+6");
+				"2022-11-14 06:00:00.000000000 Etc/GMT+6",
+				"2022-11-15 06:00:00.000000001 Etc/GMT+6");
 		} catch (StartException e) {
 			e.printStackTrace();
 		} catch (StopException e) {
@@ -77,8 +77,8 @@ public class datesTest {
 		Dates myDates = new Dates();
 		try {
 			myDates.getTimeBuckets(
-					"2022-11-07 02:00:00.000000000 Etc/GMT+5",
-					"2022-11-08 01:01:00.000000000 Etc/GMT+6");
+				"2022-11-07 02:00:00.000000000 Etc/GMT+5",
+				"2022-11-08 01:01:00.000000000 Etc/GMT+6");
 		}
 		catch (StartException e) { e.printStackTrace(); }
 		catch (StopException e) { e.printStackTrace(); }

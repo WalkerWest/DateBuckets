@@ -9,23 +9,25 @@ import java.util.List;
 import net.walkerwest.date_buckets.Exceptions.*;
 
 class Dates {
+
 	final String MORNING="06:00";
 	final String EVENING="18:00";
 
-	final static DateTimeFormatter formatter
-			= DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.nnnnnnnnn VV");
-
-	/*  Possible values for V are:
-								 March		November
-								 Daylight,  Standard,
-		America/Los_Angeles ---> Etc/GMT+7, Etc/GMT+8
-		America/Denver      ---> Etc/GMT+6, Etc/GMT+7
-		America/Chicago     ---> Etc/GMT+5, Etc/GMT+6
-		America/New_York    ---> Etc/GMT+4, Etc/GMT+5  */
+	/* Possible values for "VV" are: **************************************
+	 *                          March      November                       *
+	 *                          Daylight,  Standard,                      *
+	 * America/Los_Angeles ---> Etc/GMT+7, Etc/GMT+8                      *
+	 * America/Denver      ---> Etc/GMT+6, Etc/GMT+7                      *
+	 * America/Chicago     ---> Etc/GMT+5, Etc/GMT+6                      *
+	 * America/New_York    ---> Etc/GMT+4, Etc/GMT+5                      *
+	 **********************************************************************/
+	final static DateTimeFormatter formatter = DateTimeFormatter.
+		ofPattern("yyyy-MM-dd HH:mm:ss.nnnnnnnnn VV");
 
 	private List<ZoneId> validZones = Arrays.asList(new ZoneId[] {
-		ZoneId.of("Etc/GMT+4"), ZoneId.of("Etc/GMT+5"),	ZoneId.of("Etc/GMT+6"),
-		ZoneId.of("Etc/GMT+7"),	ZoneId.of("Etc/GMT+8")
+		ZoneId.of("Etc/GMT+4"), ZoneId.of("Etc/GMT+5"),	
+		ZoneId.of("Etc/GMT+6"), ZoneId.of("Etc/GMT+7"),	
+		ZoneId.of("Etc/GMT+8")
 	});
 
 	public Integer[] getTimeBuckets(ZonedDateTime beg, ZonedDateTime end)
